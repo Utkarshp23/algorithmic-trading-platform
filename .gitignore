@@ -1,0 +1,26 @@
+# Ignore build artifacts
+**/target/
+**/build/
+
+# Ignore IDE-specific files
+.idea/
+*.iml
+*.class
+
+# Ignore Maven wrapper files
+.mvn/
+!/.mvn/wrapper/maven-wrapper.jar
+
+# Ignore temporary files
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore Node.js dependencies and build artifacts
+frontend/node_modules/
+frontend/build/
