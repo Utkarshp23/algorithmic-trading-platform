@@ -1,0 +1,40 @@
+.line-graph {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-50%);
+  overflow: visible;
+  z-index: 1; /* Ensure the line graph is behind the header text */
+}
+
+.line {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawLine 5s linear infinite;
+  stroke-width: 0.3; /* Make the line thinner */
+  stroke: rgba(255, 165, 0, 0.3); /* Lighter shade of orange */
+}
+
+.arrow {
+  animation: moveArrow 5s linear infinite;
+  transform-origin: center; /* Ensure the arrow moves with the line */
+  fill: orange;
+  filter: drop-shadow(0 0 5px orange); /* Glowing effect */
+}
+
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes moveArrow {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
