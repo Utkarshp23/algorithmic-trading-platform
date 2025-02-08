@@ -1,0 +1,53 @@
+.broker-setup-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #1a1a1a;
+  color: white;
+  text-align: center;
+}
+
+.content {
+  max-width: 800px;
+}
+
+.main-text {
+  font-size: 1.5rem; /* Make the main text smaller */
+}
+
+.sub-text {
+  font-size: 1.2rem; /* Add a different text tone for the sub-text */
+  color: #ff5722; /* Different color for the sub-text */
+  margin-top: 1rem;
+}
+
+.broker-options {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+}
+
+.broker-card {
+  background: linear-gradient(135deg, rgba(255, 0, 255, 0.2), rgba(0, 255, 255, 0.2));
+  border-radius: 10px;
+  padding: 2rem; /* Increase the padding */
+  width: 200px; /* Increase the width */
+  height: 200px; /* Increase the height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.broker-card:hover {
+  transform: translateY(-10px);
+}
+
+.broker-logo {
+  width: 100px; /* Set the width of the logo */
+  height: 100px; /* Set the height of the logo */
+  border-radius: 50%; /* Make the logo rounded */
+  margin-bottom: 1rem;
+}
