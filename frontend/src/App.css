@@ -1,5 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Roboto Mono', monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .App {
   text-align: center;
+  transition: opacity 1s ease-in-out;
+}
+
+.App.transition {
+  opacity: 0;
 }
 
 .App-logo {
@@ -7,17 +21,157 @@
   pointer-events: none;
 }
 
-.App-header {
-  background-color: #282c34;
+.App-header, .App-section {
+  background-color: #1a1a1a; /* Consistent background color */
   min-height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  position: relative;
+  overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+.hero-section {
+  min-height: 80vh; /* Increase the height of the Hero section */
+}
+
+.features-section {
+  min-height: 80vh; /* Ensure the Features section has a minimum height */
+}
+
+.App-header::after, .App-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5));
+  pointer-events: none;
+}
+
+.App-header h1, .App-section h1 {
+  z-index: 2; /* Ensure the header text is above the line graph */
+}
+
+.market-line {
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background-color: orange;
+  animation: moveLine 5s linear infinite, upDown 2s ease-in-out infinite alternate;
+}
+
+.market-line:nth-child(odd) {
+  animation-delay: 1s;
+}
+
+.market-line:nth-child(even) {
+  animation-delay: 2s;
+}
+
+.typing-effect {
+  font-size: 4rem;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 0.15em solid orange;
+  animation: typing 4s steps(14, end), blink-caret 0.75s step-end 4s forwards;
+}
+
+.typing-effect .symbol {
+  color: rgb(0, 255, 17);
+  font-weight: bold;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 14ch } /* Adjust the width to match the length of "<AlgoSphere/>" */
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+  100% { border-color: transparent; } /* Ensure the cursor disappears */
+}
+
+@keyframes moveLine {
+  from { left: 0; }
+  to { left: 100%; }
+}
+
+@keyframes upDown {
+  from { transform: translateY(0); }
+  to { transform: translateY(-50px); }
+}
+
+/* Ripple effect for buttons */
+.ripple-button {
+  position: relative;
+  overflow: hidden;
+  padding: 0.75rem 1.5rem; /* Adjust the padding to make the button smaller */
+}
+
+.ripple-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s, opacity 1s;
+}
+
+.ripple-button:hover::after {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+/* Glassmorphism for feature cards */
+.glass-card {
+  background: linear-gradient(135deg, rgba(255, 0, 255, 0.2), rgba(0, 255, 255, 0.2)); /* Neon gradient */
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s;
+}
+
+.glass-card h3 {
+  color: #ff00ff; /* Neon color for header */
+  font-size: 1.2rem; /* Make the font size smaller */
+}
+
+.glass-card p {
+  color: #00ffff; /* Neon color for text */
+  font-size: 1rem; /* Make the font size smaller */
+}
+
+.glass-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Sticky floating CTA button */
+.sticky-cta {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ff5722;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s;
+  z-index: 1000; /* Ensure the button is always on top */
+}
+
+.sticky-cta:hover {
+  transform: scale(1.1);
 }
