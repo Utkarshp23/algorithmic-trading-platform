@@ -16,6 +16,7 @@
 *.tmp
 *.bak
 *.swp
+*.env
 
 # Ignore OS-specific files
 .DS_Store
