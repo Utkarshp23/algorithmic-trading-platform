@@ -17,15 +17,15 @@ import java.util.function.Function;
 @Component
 public class JwtUtil {
 
-    // private final Dotenv dotenv;
-    // private String SECRET_KEY;
-    // private long JWT_EXPIRATION;
+    // private final String SECRET_KEY;
+    // private final long JWT_EXPIRATION;
 
-    // @Autowired
-    // public JwtUtil(Dotenv dotenv) {
-    //     this.dotenv = dotenv;
-    //     this.SECRET_KEY = dotenv.get("JWT_SECRET");
-    //     this.JWT_EXPIRATION = Long.parseLong(dotenv.get("JWT_EXPIRATION"));
+    // // Load environment variables
+    // private final Dotenv dotenv = Dotenv.load();
+
+    // public JwtUtil() {
+    //     this.SECRET_KEY = dotenv.get("SECRET_KEY");
+    //     this.JWT_EXPIRATION = Long.parseLong(dotenv.get("JWT_EXPIRATION")); // 10 hours default
     // }
     
     //private String SECRET_KEY = dotenv.get("JWT_SECRET");
