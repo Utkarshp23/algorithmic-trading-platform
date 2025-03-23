@@ -1,0 +1,88 @@
+.dashboard {
+  display: flex;
+  height: 100vh;
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+.sidebar {
+  width: 300px; /* Increased width */
+  background-color: #2d2d2d;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+.sidebar-header {
+  padding: 20px;
+  background-color: #1e1e1e;
+  text-align: center;
+}
+
+.sidebar-header h2 {
+  margin: 0;
+  color: #ffffff;
+}
+
+.sidebar-nav {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-nav ul li {
+  margin-bottom: 10px;
+  border: 1px solid #555555; /* Make border color lighter for better visibility */
+  border-radius: 4px;
+  transition: background-color 0.3s, border-color 0.3s; /* Add transition for smooth hover effect */
+}
+
+.sidebar-nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  border-radius: 4px;
+}
+
+.sidebar-nav ul li a:hover {
+  background-color: #666666; /* Make hover background color lighter for better visibility */
+  color: #ffffff; /* Ensure text color remains white on hover */
+  border-color: #888888; /* Change border color on hover for better visibility */
+}
+
+.mainContent {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #1e1e1e;
+}
+
+.header {
+  padding: 20px;
+  background-color: #1e1e1e;
+  border-bottom: 1px solid #3a3a3a;
+}
+
+.header h1 {
+  margin: 0;
+  color: #ffffff;
+}
+
+.content {
+  padding: 20px;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.content h2 {
+  color: #ffffff;
+}
+
+.content p {
+  color: #cccccc;
+}
