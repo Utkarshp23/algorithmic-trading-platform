@@ -5,6 +5,8 @@ import HeroSection from './components/Dashboard/HeroSection';
 import FeaturesSection from './components/Dashboard/FeaturesSection';
 import LineGraph from './components/Dashboard/LineGraph';
 import BrokerSetupPage from './components/Dashboard/BrokerSetupPage';
+import Dashboard from './components/Dashboard/Dashboard';
+import ProtectedRoute from './components/ProtectedRoute';
 
 const App = () => {
   return (
@@ -47,6 +49,7 @@ const AppContent = () => {
       <main>
         <Routes>
           <Route path="/broker-setup" element={<BrokerSetupPage />} />
+          <Route path="/dashboard" element={<ProtectedRoute component={Dashboard} />} />
           <Route path="/" element={<>
             <HeroSection onGetStartedClick={handleGetStartedClick} />
             <FeaturesSection />

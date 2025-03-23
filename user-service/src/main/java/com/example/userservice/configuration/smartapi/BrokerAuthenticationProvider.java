@@ -20,10 +20,8 @@ public class BrokerAuthenticationProvider implements AuthenticationProvider {
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         String clientId = authentication.getName();
         String mpin = authentication.getCredentials().toString();
-
         // Authenticate using the BrokerAuthService
         User smartApiUser = brokerAuthService.authenticate(clientId, mpin);
-
         if (smartApiUser != null) {
             // Store the SmartAPI User object in the authentication token
             return new SmartApiAuthenticationToken(clientId, null, smartApiUser);
